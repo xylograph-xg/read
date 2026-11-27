@@ -1,0 +1,3 @@
+# Run in a separate interpreter; bundled Codex PDF runtime currently supplies these.
+pdfplumber==0.11.9
+pdfminer.six==20251230

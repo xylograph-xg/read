@@ -1,0 +1,23 @@
+{
+  "ollama_base_url": "http://127.0.0.1:11435",
+  "ollama_model": "gemma4:31b",
+  "ollama_timeout_seconds": 900,
+  "ollama_think": false,
+  "ollama_options": {
+    "temperature": 0.2,
+    "num_ctx": 32768,
+    "num_predict": 4096
+  },
+  "workspace_dir": "workspace",
+  "render_dpi": 150,
+  "max_context_chars": 12000,
+  "max_figures": 20,
+  "enable_equations": true,
+  "equation_render_dpi": 300,
+  "max_equation_groups": 8,
+  "pdf_geometry": {
+    "enabled": true,
+    "timeout_seconds": 15,
+    "python": "~/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+  }
+}

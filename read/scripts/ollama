@@ -1,0 +1,6 @@
+#!/bin/bash
+# 激活统一 venv 后，ollama 命令连接阅读项目的模型目录与专用服务。
+export OLLAMA_MODELS="${HOME}/venv/models"
+export OLLAMA_HOST="127.0.0.1:11435"
+export OLLAMA_NO_CLOUD=1
+exec /Applications/Ollama.app/Contents/Resources/ollama "$@"

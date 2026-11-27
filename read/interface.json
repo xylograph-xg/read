@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "project": "read",
+  "version": "1.0.0",
+  "python_entry": "read.api",
+  "python_exports": {
+    "parser__parse_pdf": "read.app.parser:parse_pdf",
+    "evidence_quotes__unwrap": "read.app.evidence_quotes:unwrap",
+    "evidence_preparation": "read.app.evidence_preparation",
+    "evidence_preparation__complete_column_captions": "read.app.evidence_preparation:complete_column_captions",
+    "atomic_io__atomic_json": "read.app.atomic_io:atomic_json",
+    "context_budget__fit_fields": "read.app.context_budget:fit_fields",
+    "context_budget__estimate_tokens": "read.app.context_budget:estimate_tokens",
+    "evidence_literal__literal_match": "read.app.evidence_literal:literal_match",
+    "prompt_input__source_prompt": "read.app.prompt_input:source_prompt",
+    "evidence_preparation__source_definitions": "read.app.evidence_preparation:source_definitions",
+    "context_budget__input_limit": "read.app.context_budget:input_limit",
+    "context_budget__trim_tokens": "read.app.context_budget:trim_tokens",
+    "analyzer": "read.app.analyzer",
+    "parser": "read.app.parser",
+    "exporter": "read.app.exporter",
+    "generation_state__generation_complete": "read.app.generation_state:generation_complete",
+    "evidence_preparation__filter_equation_candidates": "read.app.evidence_preparation:filter_equation_candidates",
+    "generation_state__expected_coverage": "read.app.generation_state:expected_coverage",
+    "evidence_literal__canonical": "read.app.evidence_literal:canonical",
+    "atomic_io": "read.app.atomic_io",
+    "evidence_literal": "read.app.evidence_literal",
+    "generation_state": "read.app.generation_state",
+    "analyzer__CANDIDATE_LABELS": "read.app.analyzer:CANDIDATE_LABELS",
+    "analyzer__EquationCard": "read.app.analyzer:EquationCard",
+    "analyzer__FigureCard": "read.app.analyzer:FigureCard",
+    "analyzer__PaperCard": "read.app.analyzer:PaperCard",
+    "atomic_io__atomic_text": "read.app.atomic_io:atomic_text",
+    "parser__ParsedPaper": "read.app.parser:ParsedPaper",
+    "parser__Paragraph": "read.app.parser:Paragraph",
+    "parser__render_figures": "read.app.parser:render_figures",
+    "evidence_identity__equation_folder": "read.app.evidence_identity:equation_folder",
+    "generation_state__METADATA_STAGES": "read.app.generation_state:METADATA_STAGES",
+    "generation_state__GENERATION_SCHEMA_VERSION": "read.app.generation_state:GENERATION_SCHEMA_VERSION",
+    "generation_state__metadata_complete": "read.app.generation_state:metadata_complete",
+    "evidence_quotes__verify_quotes": "read.app.evidence_quotes:verify_quotes",
+    "pdf_geometry__prompt_evidence": "read.app.pdf_geometry:prompt_evidence",
+    "prompt_input__PromptInput": "read.app.prompt_input:PromptInput",
+    "ollama_transport__chat": "read.app.ollama_transport:chat",
+    "evidence_preparation__repair_sections": "read.app.evidence_preparation:repair_sections",
+    "evidence_preparation__recover_split_figures": "read.app.evidence_preparation:recover_split_figures",
+    "evidence_preparation__recover_caption_text": "read.app.evidence_preparation:recover_caption_text",
+    "evidence_preparation__recover_numbered_equations": "read.app.evidence_preparation:recover_numbered_equations",
+    "evidence_preparation__include_adjacent_definitions": "read.app.evidence_preparation:include_adjacent_definitions",
+    "evidence_preparation__expand_unnumbered_relation_lines": "read.app.evidence_preparation:expand_unnumbered_relation_lines",
+    "pdf_geometry__prepare_geometry": "read.app.pdf_geometry:prepare_geometry",
+    "evidence_identity__equation_identity": "read.app.evidence_identity:equation_identity",
+    "evidence_preparation__equation_gaps": "read.app.evidence_preparation:equation_gaps"
+  },
+  "dependencies": [
+    "core"
+  ],
+  "cli_modules": [],
+  "state_contract": "Host config and catalog_path; pause, identity, receipt and source-hash protections unchanged",
+  "import_side_effects": "No new service/browser/model starts; capabilities preserve their original explicit call side effects",
+  "compatibility": "New projects use canonical packages and public APIs; existing resident entries are served only by pipeline adapters",
+  "export_contracts": {
+    "parser__parse_pdf": {
+      "implementation": "read.app.parser:parse_pdf",
+      "signature": "parse_pdf(pdf_path: str | Path, config: dict | None=None)",
+      "description": ""
+    },
+    "evidence_quotes__unwrap": {
+      "implementation": "read.app.evidence_quotes:unwrap",
+      "signature": "unwrap(text)",
+      "description": ""
+    },
+    "evidence_preparation": {
+      "implementation": "read.app.evidence_preparation",
+      "kind": "module"
+    },
+    "evidence_preparation__complete_column_captions": {
+      "implementation": "read.app.evidence_preparation:complete_column_captions",
+      "signature": "complete_column_captions(parsed)",
+      "description": "Join same-sized caption continuations across columns, never nearby prose."
+    },
+    "atomic_io__atomic_json": {
+      "implementation": "read.app.atomic_io:atomic_json",
+      "signature": "atomic_json(path, value, durable=True)",
+      "description": ""
+    },
+    "context_budget__fit_fields": {
+      "implementation": "read.app.context_budget:fit_fields",
+      "signature": "fit_fields(values, render, limit)",
+      "description": ""
+    },
+    "context_budget__estimate_tokens": {
+      "implementation": "read.app.context_budget:estimate_tokens",
+      "signature": "estimate_tokens(text)",
+      "description": ""
+    },
+    "evidence_literal__literal_match": {
+      "implementation": "read.app.evidence_literal:literal_match",
+      "signature": "literal_match(quote, evidence, *, case_sensitive=False)",
+      "description": ""
+    },
+    "prompt_input__source_prompt": {
+      "implementation": "read.app.prompt_input:source_prompt",
+      "signature": "source_prompt(text, fields)",
+      "description": ""
+    },
+    "evidence_preparation__source_definitions": {
+      "implementation": "read.app.evidence_preparation:source_definitions",
+      "signature": "source_definitions(parsed, text, max_chars=3200, limit=6)",
+      "description": "Return original paper definitions; retain conflicting or local redefinitions."
+    },
+    "context_budget__input_limit": {
+      "implementation": "read.app.context_budget:input_limit",
+      "signature": "input_limit(options, system='', images=None)",
+      "description": ""
+    },
+    "context_budget__trim_tokens": {
+      "implementation": "read.app.context_budget:trim_tokens",
+      "signature": "trim_tokens(text, limit, marker=TRUNCATION)",
+      "description": ""
+    },
+    "analyzer": {
+      "implementation": "read.app.analyzer",
+      "kind": "module"
+    },
+    "parser": {
+      "implementation": "read.app.parser",
+      "kind": "module"
+    },
+    "exporter": {
+      "implementation": "read.app.exporter",
+      "kind": "module"
+    },
+    "generation_state__generation_complete": {
+      "implementation": "read.app.generation_state:generation_complete",
+      "signature": "generation_complete(card)",
+      "description": ""
+    },
+    "evidence_preparation__filter_equation_candidates": {
+      "implementation": "read.app.evidence_preparation:filter_equation_candidates",
+      "signature": "filter_equation_candidates(parsed)",
+      "description": "The pipeline accepts numbered equations or explicit relations, not plot labels.\n\nKeep whole groups only when every member passes; partial group crops would\nstill show discarded axes. Numbered equations retain the parser's contract."
+    },
+    "generation_state__expected_coverage": {
+      "implementation": "read.app.generation_state:expected_coverage",
+      "signature": "expected_coverage(paper)",
+      "description": ""
+    },
+    "evidence_literal__canonical": {
+      "implementation": "read.app.evidence_literal:canonical",
+      "signature": "canonical(text)",
+      "description": ""
+    },
+    "atomic_io": {
+      "implementation": "read.app.atomic_io",
+      "kind": "module"
+    },
+    "evidence_literal": {
+      "implementation": "read.app.evidence_literal",
+      "kind": "module"
+    },
+    "generation_state": {
+      "implementation": "read.app.generation_state",
+      "kind": "module"
+    },
+    "analyzer__CANDIDATE_LABELS": {
+      "implementation": "read.app.analyzer:CANDIDATE_LABELS",
+      "kind": "constant_or_imported_symbol"
+    },
+    "analyzer__EquationCard": {
+      "implementation": "read.app.analyzer:EquationCard",
+      "description": "",
+      "kind": "class"
+    },
+    "analyzer__FigureCard": {
+      "implementation": "read.app.analyzer:FigureCard",
+      "description": "",
+      "kind": "class"
+    },
+    "analyzer__PaperCard": {
+      "implementation": "read.app.analyzer:PaperCard",
+      "description": "",
+      "kind": "class"
+    },
+    "atomic_io__atomic_text": {
+      "implementation": "read.app.atomic_io:atomic_text",
+      "signature": "atomic_text(path, text, durable=True)",
+      "description": ""
+    },
+    "parser__ParsedPaper": {
+      "implementation": "read.app.parser:ParsedPaper",
+      "description": "",
+      "kind": "class"
+    },
+    "parser__Paragraph": {
+      "implementation": "read.app.parser:Paragraph",
+      "description": "",
+      "kind": "class"
+    },
+    "parser__render_figures": {
+      "implementation": "read.app.parser:render_figures",
+      "signature": "render_figures(parsed: ParsedPaper, out_dir: str | Path, dpi: int=150, equation_dpi: int=300)",
+      "description": "把每张 Figure / 公式的裁切区域渲染成图片；公式用更高分辨率。"
+    },
+    "evidence_identity__equation_folder": {
+      "implementation": "read.app.evidence_identity:equation_folder",
+      "signature": "equation_folder(number, page, identity='')",
+      "description": ""
+    },
+    "generation_state__METADATA_STAGES": {
+      "implementation": "read.app.generation_state:METADATA_STAGES",
+      "kind": "constant_or_imported_symbol"
+    },
+    "generation_state__GENERATION_SCHEMA_VERSION": {
+      "implementation": "read.app.generation_state:GENERATION_SCHEMA_VERSION",
+      "kind": "constant_or_imported_symbol"
+    },
+    "generation_state__metadata_complete": {
+      "implementation": "read.app.generation_state:metadata_complete",
+      "signature": "metadata_complete(meta)",
+      "description": ""
+    },
+    "evidence_quotes__verify_quotes": {
+      "implementation": "read.app.evidence_quotes:verify_quotes",
+      "signature": "verify_quotes(raw, evidence, provided=None)",
+      "description": "Every submitted quote must match both source and actual sent evidence.\n\nA continuous wrapped quote is preferred. If it does not match, support\nnewline-separated quotations, never accepting only the valid subset."
+    },
+    "pdf_geometry__prompt_evidence": {
+      "implementation": "read.app.pdf_geometry:prompt_evidence",
+      "signature": "prompt_evidence(row)",
+      "description": ""
+    },
+    "prompt_input__PromptInput": {
+      "implementation": "read.app.prompt_input:PromptInput",
+      "description": "",
+      "kind": "class"
+    },
+    "ollama_transport__chat": {
+      "implementation": "read.app.ollama_transport:chat",
+      "signature": "chat(base_url, payload, timeout, schedule_config)",
+      "description": ""
+    },
+    "evidence_preparation__repair_sections": {
+      "implementation": "read.app.evidence_preparation:repair_sections",
+      "signature": "repair_sections(parsed, reader)",
+      "description": "Recover exact headings lost to footer removal or merged into body blocks."
+    },
+    "evidence_preparation__recover_split_figures": {
+      "implementation": "read.app.evidence_preparation:recover_split_figures",
+      "signature": "recover_split_figures(parsed, reader)",
+      "description": "Standalone Figure N labels followed by smaller caption text are captions."
+    },
+    "evidence_preparation__recover_caption_text": {
+      "implementation": "read.app.evidence_preparation:recover_caption_text",
+      "signature": "recover_caption_text(parsed, reader)",
+      "description": "Do not inherit prose appended outside the owner's caption rectangle."
+    },
+    "evidence_preparation__recover_numbered_equations": {
+      "implementation": "read.app.evidence_preparation:recover_numbered_equations",
+      "signature": "recover_numbered_equations(parsed, reader)",
+      "description": "Use printed, isolated numbers and whole display bands, including vector glyphs."
+    },
+    "evidence_preparation__include_adjacent_definitions": {
+      "implementation": "read.app.evidence_preparation:include_adjacent_definitions",
+      "signature": "include_adjacent_definitions(parsed, max_chars=12000)",
+      "description": "The owner context routine skips the anchor itself; keep immediate definitions."
+    },
+    "evidence_preparation__expand_unnumbered_relation_lines": {
+      "implementation": "read.app.evidence_preparation:expand_unnumbered_relation_lines",
+      "signature": "expand_unnumbered_relation_lines(parsed, reader)",
+      "description": "Keep all glyph runs of a relation line, including detached right factors."
+    },
+    "pdf_geometry__prepare_geometry": {
+      "implementation": "read.app.pdf_geometry:prepare_geometry",
+      "signature": "prepare_geometry(paper, config)",
+      "description": "Add source evidence; repair only missing assignments with a printed ID.\n\nCrop/labels/counts never change. Existing complete text is left intact;\noriginal incomplete extraction remains in the ledger for review."
+    },
+    "evidence_identity__equation_identity": {
+      "implementation": "read.app.evidence_identity:equation_identity",
+      "signature": "equation_identity(page, bbox)",
+      "description": ""
+    },
+    "evidence_preparation__equation_gaps": {
+      "implementation": "read.app.evidence_preparation:equation_gaps",
+      "signature": "equation_gaps(parsed)",
+      "description": "Expose holes in printed number series; never synthesize missing science."
+    }
+  },
+  "side_effects": "PDF/图片/本地输出；旧模型路径只在显式调用且守卫允许时运行，当前不允许。",
+  "selection_and_retention": "删除Streamlit旧UI及其启动/配置入口，保留当前read.app解析与证据模块，因为cards/reading/review仍调用。旧模型运输必须经core的禁用/暂停和租约守卫；不因库被导入启动模型。",
+  "runtime_activation": "No automatic start/resume; existing controls and sole owner remain authoritative",
+  "physical_source_root": "../tools/read/read",
+  "workspace_project": "read"
+}

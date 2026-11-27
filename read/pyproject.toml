@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-read"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = ["paper-core==1.0.0", "PyMuPDF>=1.24", "requests>=2.31"]
+
+[tool.setuptools]
+packages = ["read", "read.app"]
+package-dir = {"read" = "."}
+
+[tool.setuptools.package-data]
+read = ["interface.json", "requirements-*.txt", "*.html", "docs/*.md", "vendor/*.js", "vendor/*.css", "vendor/fonts/*", "vendor/contrib/*"]
+
+"read.app" = ["config.json", "prompts/*.md"]
